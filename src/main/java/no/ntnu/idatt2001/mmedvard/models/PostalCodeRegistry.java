@@ -16,4 +16,11 @@ public class PostalCodeRegistry {
     public Collection<PostalCode> getPostalCodeArrayList() {
         return this.postalCodeArrayList;
     }
+
+    public boolean addPostalCode(PostalCode newPostalCode){
+        if(postalCodeArrayList.add(newPostalCode)){
+            return true;
+        }
+        return false;
+    }
 }

@@ -18,9 +18,39 @@ public class MenuBarFactory {
     public static MenuBar create(MainController mainController, PostalCodeRegistry postalCodeRegistry, PostalCodeApplication app){
 
         //---------- FILE MENU ------------
-        Menu search = new Menu("Search");
-        MenuItem searchPostalCode = new MenuItem("Search for postal code");
-        searchPostalCode.setOnAction(event -> mainController.searchByPostalCode(postalCodeRegistry, app));
+        Menu fileMenu = new Menu("File");
+
+        MenuItem search = new MenuItem("Search...");
+        search.setOnAction(event -> mainController.searchByPostalCode(postalCodeRegistry, app));
+
+        MenuItem fileImport = new MenuItem("Import from CSV..");
+        fileImport.setOnAction(event -> mainController.importFromFile(event, postalCodeRegistry, app));
+
+        MenuItem exit = new MenuItem("Exit");
+        exit.setOnAction(event -> mainController.exit(event));
+
+        fileMenu.getItems().add(fileImport);
+        fileMenu.getItems().add(search);
+        fileMenu.getItems().add(new SeparatorMenuItem());
+        fileMenu.getItems().add(exit);
+
+
+        //--------- HELP MENU ------------
+        Menu helpMenu = new Menu("Help");
+
+        MenuItem about = new MenuItem("About...");
+        about.setOnAction(event -> mainController.aboutDialog(VERSION));
+
+        helpMenu.getItems().add(about);
+
+
+        //--------- MAIN MENU BAR -----------
+        MenuBar menuBar = new MenuBar();
+        menuBar.getMenus().addAll(fileMenu,helpMenu);
+
+        return menuBar;
+
+
     }
 
 }

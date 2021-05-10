@@ -4,6 +4,9 @@ import no.ntnu.idatt2001.mmedvard.PostalCodeApplication;
 import no.ntnu.idatt2001.mmedvard.models.PostalCode;
 import no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistry;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.List;
 import java.util.Optional;
 import java.io.File;
 import java.io.IOException;
@@ -66,4 +69,35 @@ public class MainController {
             app.updateObservableList();
         }
     }
+
+
+    public void importFromFile(ActionEvent event, PostalCodeRegistry postalCodeRegistry, PostalCodeApplication parent){
+        FileChooser chooser = new FileChooser();
+        File file = chooser.showOpenDialog(new Stage());
+
+        if(file == null){
+            return;
+        }
+        if(!fileIsCSV(file.getName())){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Wrong file type!");
+            alert.setHeaderText("File type not supported. Please select a .csv file.");
+            alert.showAndWait();
+            return;
+        }
+        ArrayList<PostalCode> postalCodeList;
+        try{
+            postalCodeList = FileManager.importFromFile(file);
+        }catch (Exception exception){
+            return;
+        }
+        postalCodeList.forEach(postalCodeRegistry :: addPostalCode);
+        parent.updateObservableList();
+    }
+
+    private boolean fileIsCSV(String name){
+        String[] s = name.split("\\.");
+        return s[s.length-1].equals("csv");
+    }
+
 }
