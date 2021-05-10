@@ -17,8 +17,6 @@ import no.ntnu.idatt2001.mmedvard.controllers.MainController;
 import no.ntnu.idatt2001.mmedvard.models.PostalCode;
 import no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistry;
 import no.ntnu.idatt2001.mmedvard.controllers.factories.*;
-
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class PostalCodeApplication extends Application{
@@ -29,7 +27,7 @@ public class PostalCodeApplication extends Application{
     private ObservableList<PostalCode> postalCodeRegistryWrapper;
 
     public static void main(String[] args) {
-
+        launch(args);
     }
 
     @Override
@@ -67,8 +65,8 @@ public class PostalCodeApplication extends Application{
     }
 
     public void updateObservableList(){
-        this.postalCodeRegistry.setItems(getPostalCodeRegistryWrapper());
-        this.postalCodeRegistry.refresh();
+        this.postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
+        this.postalCodeTableView.refresh();
     }
 
     public ObservableList<PostalCode> getPostalCodeRegistryWrapper(){

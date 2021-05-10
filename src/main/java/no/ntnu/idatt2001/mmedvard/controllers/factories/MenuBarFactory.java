@@ -17,11 +17,14 @@ public class MenuBarFactory {
 
     public static MenuBar create(MainController mainController, PostalCodeRegistry postalCodeRegistry, PostalCodeApplication app){
 
+        String searchString = "";
+
+
         //---------- FILE MENU ------------
         Menu fileMenu = new Menu("File");
 
         MenuItem search = new MenuItem("Search...");
-        search.setOnAction(event -> mainController.searchByPostalCode(postalCodeRegistry, app));
+        search.setOnAction(event -> mainController.searchByPostalCode(searchString));
 
         MenuItem fileImport = new MenuItem("Import from CSV..");
         fileImport.setOnAction(event -> mainController.importFromFile(event, postalCodeRegistry, app));

@@ -1,6 +1,7 @@
 package no.ntnu.idatt2001.mmedvard.controllers;
 
 import no.ntnu.idatt2001.mmedvard.PostalCodeApplication;
+import no.ntnu.idatt2001.mmedvard.models.FileManager;
 import no.ntnu.idatt2001.mmedvard.models.PostalCode;
 import no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistry;
 
@@ -44,19 +45,52 @@ public class MainController {
     }
 
 
-    public void searchByPostalCode(PostalCodeApplication app){
+    // TODO: 11.05.2021 replace both search methods with one search method for all columns
+
+    public PostalCode searchByPostalCode(String searchingFor){
+
+        /*
+        String result = null;
+
+        ArrayList<PostalCode> postalCodes = new ArrayList<>();
+
+        boolean match = postalCodes.stream().anyMatch(s -> postalCodes.contains(searchingFor));
+
+        *
+
+        for (PostalCode postDetails : postalCodes){
+            if(postDetails.getPostalCode().equals(searchingFor)){
+                return postDetails;
+            }else if()
+
+
+
+
+
+            return null;
+
+        }
+
 
         //PostalCodeDialog postalCodeDialogCode = new PostalCodeDialog();
 
         //Optional<PostalCode> result = postalCodeDialogCode.showAndWait();
 
+        /*
         if(result.isPresent()){
             PostalCode post = result.get();
             postalCodeRegistry.getPostalCodeArrayList();
             app.updateObservableList();
         }
+
+         */
+
+        return null;
     }
 
+
+
+    /*
     public void searchByPostalName(PostalCodeApplication app){
 
         //PostalCodeDialog postalCodeDialogName = new PostalCodeDialog();
@@ -69,6 +103,8 @@ public class MainController {
             app.updateObservableList();
         }
     }
+
+     */
 
 
     public void importFromFile(ActionEvent event, PostalCodeRegistry postalCodeRegistry, PostalCodeApplication parent){

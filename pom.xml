@@ -30,7 +30,7 @@
             <configuration>
                 <release>${maven.compiler.target}</release>
                 <launcher>launcher</launcher>
-                <mainClass>no.ntnu.idatt2001.mmedvard.Application</mainClass>
+                <mainClass>no.ntnu.idatt2001.mmedvard.PostalCodeApplication</mainClass>
             </configuration>
         </plugin>
     </plugins>
