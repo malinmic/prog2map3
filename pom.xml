@@ -30,7 +30,7 @@
             <configuration>
                 <release>${maven.compiler.target}</release>
                 <launcher>launcher</launcher>
-                <mainClass>no.ntnu.idatt2001.mmedvard.App</mainClass>
+                <mainClass>no.ntnu.idatt2001.mmedvard.Application</mainClass>
             </configuration>
         </plugin>
     </plugins>
@@ -54,6 +54,11 @@
         <artifactId>junit-jupiter-api</artifactId>
         <version>5.7.0</version>
         <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-graphics</artifactId>
+        <version>11</version>
     </dependency>
 </dependencies>
 
