@@ -22,11 +22,10 @@ import no.ntnu.idatt2001.mmedvard.models.PostalCode;
 import no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistry;
 import no.ntnu.idatt2001.mmedvard.controllers.factories.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -57,6 +56,7 @@ public class PostalCodeApplication extends Application{
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
         createTable();
+        fillTable();
         MenuBar mainMenu = MenuBarFactory.create(mainController, postalCodeRegistry,this);
         ToolBar toolBar = ToolBarFactory.create(mainController,postalCodeRegistry,this);
 
@@ -76,34 +76,6 @@ public class PostalCodeApplication extends Application{
 
 
          */
-
-
-        String file = "src\\main\\resources\\Postnummerregister-ansi.txt";
-        BufferedReader bufferedReader = null;
-        String lineReader = "";
-
-        try {
-            bufferedReader = new BufferedReader(new FileReader(file));
-            while((lineReader = bufferedReader.readLine()) != null){
-
-                String[] data = lineReader.split("\t");
-
-                for(String s : data){
-                    PostalCode postalCode = new PostalCode(data[0].trim(), data[1].trim(), data[2].trim(), data[3].trim(), data[4].trim());
-                    postalCodeRegistry.addPostalCode(postalCode);
-                    postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
-
-                }
-
-            }
-        } catch (Exception exception){
-            exception.printStackTrace();
-        }
-
-
-
-
-
 
 
 
@@ -141,7 +113,11 @@ public class PostalCodeApplication extends Application{
                     break;
 
                 default:
-                    this.postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
+                    try {
+                        this.postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
+                    } catch (IOException exception) {
+                        exception.printStackTrace();
+                    }
                     break;
             }
         });
@@ -186,12 +162,12 @@ public class PostalCodeApplication extends Application{
 
     }
 
-    public void updateObservableList(){
+    public void updateObservableList() throws IOException {
         this.postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
         this.postalCodeTableView.refresh();
     }
 
-    public ObservableList<PostalCode> getPostalCodeRegistryWrapper(){
+    public ObservableList<PostalCode> getPostalCodeRegistryWrapper() throws IOException {
         if(this.postalCodeRegistry == null){
             postalCodeRegistryWrapper = null;
         }else{
@@ -204,7 +180,7 @@ public class PostalCodeApplication extends Application{
     /**
      * method to create table with postal codes
      */
-    private void createTable(){
+    private void createTable() throws IOException {
         //1. column: postal code
         TableColumn<PostalCode,String> postalCodeColumn = new TableColumn<>("Postal Code");
         postalCodeColumn.setMinWidth(200);
@@ -230,26 +206,25 @@ public class PostalCodeApplication extends Application{
         categoryColumn.setMinWidth(200);
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
 
+
         postalCodeTableView = new TableView<>();
         ObservableList<PostalCode> observableListOfPostalCodes = this.postalCodeRegistryWrapper;
+
+
         postalCodeTableView.setItems(observableListOfPostalCodes);
-
         postalCodeTableView.getColumns().addAll(postalCodeColumn,postOfficeColumn,municipalityNumberColumn,municipalityNameColumn,categoryColumn);
-
         postalCodeTableView.setItems(FXCollections.observableArrayList(this.postalCodeRegistry.getPostalCodeArrayList()));
 
-        //postalCodeTableView.getItems().add(new PostalCode("8800", "Sandnessjøen","10","Alstahaug","G"));
+
+        postalCodeTableView.getItems().add(new PostalCode("8800", "Sandnessjøen","10","Alstahaug","G"));
 
     }
 
 
+    private void fillTable(){
+        postalCodeTableView.setItems(FXCollections.observableArrayList(this.postalCodeRegistry.getPostalCodeArrayList()));
 
-
-
-
-
-
-
+    }
 
 
 

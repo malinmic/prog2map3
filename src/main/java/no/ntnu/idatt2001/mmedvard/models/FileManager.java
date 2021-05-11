@@ -6,13 +6,17 @@ import java.util.List;
 
 public class FileManager {
 
-    /*
+
     public static ArrayList<PostalCode> importFromFile(File file){
         ArrayList<PostalCode> listOfPostalCodes= new ArrayList<>();
 
         try{
-            BufferedReader buffer = new BufferedReader(new FileReader(file));
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
+            //new FileReader(file)
+
+
             String s;
+
             while((s = buffer.readLine()) != null){
                 String[] string = s.split("\t");
 
@@ -35,7 +39,7 @@ public class FileManager {
 
 
 
-     */
+
 
 
     /*

@@ -11,6 +11,8 @@ import no.ntnu.idatt2001.mmedvard.controllers.MainController;
 import no.ntnu.idatt2001.mmedvard.models.PostalCode;
 import no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistry;
 
+import java.io.IOException;
+
 public class MenuBarFactory {
 
     private static final String VERSION = "0.0.1";
@@ -27,7 +29,13 @@ public class MenuBarFactory {
         //search.setOnAction(event -> mainController.searchByPostalCode(searchString));
 
         MenuItem fileImport = new MenuItem("Import from CSV..");
-        //fileImport.setOnAction(event -> mainController.importFromFile(event, postalCodeRegistry, app));
+        fileImport.setOnAction(event -> {
+            try {
+                mainController.importFromFile(event, postalCodeRegistry, app);
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+        });
 
         MenuItem exit = new MenuItem("Exit");
         exit.setOnAction(event -> mainController.exit(event));

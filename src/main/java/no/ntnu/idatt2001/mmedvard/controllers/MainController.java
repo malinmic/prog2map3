@@ -44,6 +44,28 @@ public class MainController {
         alert.showAndWait();
     }
 
+
+    public void importFromFile(ActionEvent event, PostalCodeRegistry postalCodeRegistry, PostalCodeApplication parent) throws IOException {
+        FileChooser chooser = new FileChooser();
+        File file = chooser.showOpenDialog(new Stage());
+
+        if (file == null) {
+            return;
+        }
+
+        ArrayList<PostalCode> post;
+        try {
+            post = FileManager.importFromFile(file);
+        }catch (Exception e) {
+            return;
+        }
+
+        post.forEach(postalCodeRegistry::addPostalCode);
+        parent.updateObservableList();
+    }
+
+
+
     /*
 
     // TODO: 11.05.2021 replace both search methods with one search method for all columns
