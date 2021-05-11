@@ -2,8 +2,40 @@ package no.ntnu.idatt2001.mmedvard.models;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FileManager {
+
+    public static ArrayList<PostalCode> importFromFile(File file){
+        ArrayList<PostalCode> listOfPostalCodes= new ArrayList<>();
+
+        try{
+            BufferedReader buffer = new BufferedReader(new FileReader(file));
+            String s;
+            while((s = buffer.readLine()) != null){
+                String[] string = s.split("\t");
+
+                if(string.length >= 3){
+                    if(string[0].trim().length() == 4){
+                        PostalCode post = new PostalCode(string[0].trim(),string[1].trim(),string[2].trim(),string[3].trim(),string[4].trim());
+                        listOfPostalCodes.add(post);
+                    }
+                }
+            }
+            buffer.close();
+
+        }catch (IOException exception){
+            exception.printStackTrace();
+        }
+        return listOfPostalCodes;
+    }
+
+
+
+
+
+
+    /*
 
     public static ArrayList<PostalCode> importFromFile(File file) throws IOException{
         ArrayList<PostalCode> postalCodes = new ArrayList<>();
@@ -31,4 +63,6 @@ public class FileManager {
         return postalCodes;
     }
 
+
+     */
 }
