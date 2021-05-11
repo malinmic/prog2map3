@@ -24,10 +24,10 @@ public class MenuBarFactory {
         Menu fileMenu = new Menu("File");
 
         MenuItem search = new MenuItem("Search...");
-        search.setOnAction(event -> mainController.searchByPostalCode(searchString));
+        //search.setOnAction(event -> mainController.searchByPostalCode(searchString));
 
         MenuItem fileImport = new MenuItem("Import from CSV..");
-        fileImport.setOnAction(event -> mainController.importFromFile(event, postalCodeRegistry, app));
+        //fileImport.setOnAction(event -> mainController.importFromFile(event, postalCodeRegistry, app));
 
         MenuItem exit = new MenuItem("Exit");
         exit.setOnAction(event -> mainController.exit(event));

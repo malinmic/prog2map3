@@ -6,6 +6,7 @@ import java.util.List;
 
 public class FileManager {
 
+    /*
     public static ArrayList<PostalCode> importFromFile(File file){
         ArrayList<PostalCode> listOfPostalCodes= new ArrayList<>();
 
@@ -33,6 +34,8 @@ public class FileManager {
 
 
 
+
+     */
 
 
     /*
@@ -65,4 +68,5 @@ public class FileManager {
 
 
      */
+
 }

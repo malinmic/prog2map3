@@ -1,5 +1,6 @@
 package no.ntnu.idatt2001.mmedvard;
 import javafx.application.Application;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -20,7 +21,14 @@ import no.ntnu.idatt2001.mmedvard.controllers.MainController;
 import no.ntnu.idatt2001.mmedvard.models.PostalCode;
 import no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistry;
 import no.ntnu.idatt2001.mmedvard.controllers.factories.*;
+
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.nio.file.Files;
+import java.util.Collection;
+import java.util.stream.Collectors;
 
 public class PostalCodeApplication extends Application{
 
@@ -37,7 +45,6 @@ public class PostalCodeApplication extends Application{
     @Override
     public void init() throws Exception {
         super.init();
-
         this.mainController = new MainController();
         this.postalCodeRegistry = new PostalCodeRegistry();
         this.postalCodeRegistryWrapper = getPostalCodeRegistryWrapper();
@@ -69,6 +76,35 @@ public class PostalCodeApplication extends Application{
 
 
          */
+
+
+        String file = "src\\main\\resources\\Postnummerregister-ansi.txt";
+        BufferedReader bufferedReader = null;
+        String lineReader = "";
+
+        try {
+            bufferedReader = new BufferedReader(new FileReader(file));
+            while((lineReader = bufferedReader.readLine()) != null){
+
+                String[] data = lineReader.split("\t");
+
+                for(String s : data){
+                    PostalCode postalCode = new PostalCode(data[0].trim(), data[1].trim(), data[2].trim(), data[3].trim(), data[4].trim());
+                    postalCodeRegistry.addPostalCode(postalCode);
+                    postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
+
+                }
+
+            }
+        } catch (Exception exception){
+            exception.printStackTrace();
+        }
+
+
+
+
+
+
 
 
 
@@ -202,9 +238,21 @@ public class PostalCodeApplication extends Application{
 
         postalCodeTableView.setItems(FXCollections.observableArrayList(this.postalCodeRegistry.getPostalCodeArrayList()));
 
-        postalCodeTableView.getItems().add(new PostalCode("8800", "Sandnessjøen","10","Alstahaug","G"));
+        //postalCodeTableView.getItems().add(new PostalCode("8800", "Sandnessjøen","10","Alstahaug","G"));
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void stop() throws Exception {

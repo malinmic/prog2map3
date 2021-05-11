@@ -22,7 +22,7 @@ public class ToolBarFactory {
         Button importButton = new Button("Import", new ImageView(importImg));
 
         // TODO: 11.05.2021
-        importButton.setOnAction(event -> mainController.importFromFile(event, postalCodeRegistry,app));
+        //importButton.setOnAction(event -> mainController.importFromFile(event, postalCodeRegistry,app));
 
         //SEARCH BUTTON
         Image searchImg = new Image(new FileInputStream(PostalCodeApplication.class.getClassLoader().getResource("SearchIcon.jpg").getFile()),16,16,true,true);
@@ -30,7 +30,7 @@ public class ToolBarFactory {
 
         // TODO: 11.05.2021
         String searchString = "";
-        searchButton.setOnAction(event -> mainController.searchByPostalCode(searchString));
+        //searchButton.setOnAction(event -> mainController.searchByPostalCode(searchString));
 
         toolBar.getItems().addAll(importButton,searchButton);
         return toolBar;

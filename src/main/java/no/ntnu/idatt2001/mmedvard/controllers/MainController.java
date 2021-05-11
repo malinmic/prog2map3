@@ -44,6 +44,7 @@ public class MainController {
         alert.showAndWait();
     }
 
+    /*
 
     // TODO: 11.05.2021 replace both search methods with one search method for all columns
 
@@ -83,7 +84,7 @@ public class MainController {
             app.updateObservableList();
         }
 
-         */
+
 
         return null;
     }
@@ -106,6 +107,7 @@ public class MainController {
 
      */
 
+    /*
 
     public void importFromFile(ActionEvent event, PostalCodeRegistry postalCodeRegistry, PostalCodeApplication parent){
         FileChooser chooser = new FileChooser();
@@ -123,7 +125,7 @@ public class MainController {
             return;
         }
 
-         */
+
         ArrayList<PostalCode> postalCodeList;
         try{
             postalCodeList = FileManager.importFromFile(file);
@@ -139,6 +141,8 @@ public class MainController {
         String[] s = name.split("\\.");
         return s[s.length-1].equals("csv");
     }
+
+
 
      */
 

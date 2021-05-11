@@ -1,5 +1,8 @@
 package no.ntnu.idatt2001.mmedvard.models;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class PostalCode {
 
     protected String postalCode;
@@ -14,6 +17,10 @@ public class PostalCode {
         this.municipalityNumber = municipalityNumber;
         this.municipalityName = municipalityName;
         this.category = category;
+    }
+
+    public PostalCode() {
+
     }
 
     public void setPostalCode(String postalCode) {
