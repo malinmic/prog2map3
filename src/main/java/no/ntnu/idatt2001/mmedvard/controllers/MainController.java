@@ -114,6 +114,7 @@ public class MainController {
         if(file == null){
             return;
         }
+        /*
         if(!fileIsCSV(file.getName())){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Wrong file type!");
@@ -121,6 +122,8 @@ public class MainController {
             alert.showAndWait();
             return;
         }
+
+         */
         ArrayList<PostalCode> postalCodeList;
         try{
             postalCodeList = FileManager.importFromFile(file);
@@ -131,9 +134,12 @@ public class MainController {
         parent.updateObservableList();
     }
 
+    /*
     private boolean fileIsCSV(String name){
         String[] s = name.split("\\.");
         return s[s.length-1].equals("csv");
     }
+
+     */
 
 }

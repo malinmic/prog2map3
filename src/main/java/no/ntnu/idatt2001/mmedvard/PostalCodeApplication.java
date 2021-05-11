@@ -2,6 +2,9 @@ package no.ntnu.idatt2001.mmedvard;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -25,6 +28,7 @@ public class PostalCodeApplication extends Application{
     private MainController mainController;
     private PostalCodeRegistry postalCodeRegistry;
     private ObservableList<PostalCode> postalCodeRegistryWrapper;
+    private ObservableList<PostalCode> data = FXCollections.observableArrayList();
 
     public static void main(String[] args) {
         launch(args);
@@ -49,9 +53,10 @@ public class PostalCodeApplication extends Application{
         MenuBar mainMenu = MenuBarFactory.create(mainController, postalCodeRegistry,this);
         ToolBar toolBar = ToolBarFactory.create(mainController,postalCodeRegistry,this);
 
+        /*
         VBox topContainer = new VBox();
         topContainer.getChildren().add(mainMenu);
-        topContainer.getChildren().add(toolBar);
+        topContainer.getChildren().add(hBox);
 
         BorderPane borderPane = new BorderPane();
         borderPane.setCenter(this.postalCodeTableView);
@@ -61,6 +66,87 @@ public class PostalCodeApplication extends Application{
         primaryStage.setScene(scene);
 
         primaryStage.show();
+
+
+         */
+
+
+
+
+        FilteredList<PostalCode> filteredList = new FilteredList<>(data, p -> true);
+        postalCodeTableView.setItems(filteredList);
+
+        ChoiceBox<String> choiceBox = new ChoiceBox<>();
+        choiceBox.getItems().addAll("Postal Code", "Post Office", "Municipality number", "Municipality name", "Category");
+        choiceBox.setValue("Postal Code");
+
+        TextField searchBox = new TextField();
+        searchBox.setPromptText("Search..");
+        searchBox.textProperty().addListener((obs, oldValue, newValue) -> {
+            switch (choiceBox.getValue()){
+                case "Postal Code":
+                    filteredList.setPredicate(p -> p.getPostalCode().toLowerCase().contains(newValue.toLowerCase().trim()));
+                    break;
+
+                case "Post Office":
+                    filteredList.setPredicate(p -> p.getPostOffice().toLowerCase().contains(newValue.toLowerCase().trim()));
+                    break;
+
+                case "Municipality number":
+                    filteredList.setPredicate(p -> p.getMunicipalityNumber().toLowerCase().contains(newValue.toLowerCase().trim()));
+                    break;
+
+                case "Municipality name":
+                    filteredList.setPredicate(p -> p.getMunicipalityName().toLowerCase().contains(newValue.toLowerCase().trim()));
+                    break;
+
+                case "Category":
+                    filteredList.setPredicate(p -> p.getCategory().toLowerCase().contains(newValue.toLowerCase().trim()));
+                    break;
+
+                default:
+                    this.postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
+                    break;
+            }
+        });
+
+        choiceBox.getSelectionModel().selectedItemProperty().addListener((obs,oldValue,newValue) -> {
+            if(newValue != null) {
+                searchBox.setText("");
+            }
+        });
+
+        HBox hBox = new HBox(choiceBox,searchBox);
+        hBox.setAlignment(Pos.TOP_LEFT);
+
+
+        VBox topContainer = new VBox();
+        topContainer.getChildren().add(mainMenu);
+        topContainer.getChildren().add(hBox);
+
+        BorderPane borderPane = new BorderPane();
+        borderPane.setCenter(this.postalCodeTableView);
+        borderPane.setTop(topContainer);
+
+        Scene scene = SceneFactory.create(borderPane);
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
+
+
+        /*
+        final VBox vbox = new VBox();
+        vbox.setSpacing(5);
+        vbox.setPadding(new Insets(10,0,0,10));
+        vbox.getChildren().addAll(label)
+
+
+         */
+
+
+
+
+
 
     }
 
@@ -85,27 +171,27 @@ public class PostalCodeApplication extends Application{
     private void createTable(){
         //1. column: postal code
         TableColumn<PostalCode,String> postalCodeColumn = new TableColumn<>("Postal Code");
-        postalCodeColumn.setMinWidth(100);
+        postalCodeColumn.setMinWidth(200);
         postalCodeColumn.setCellValueFactory(new PropertyValueFactory<>("postalCode"));
 
         //2. column: post office
         TableColumn<PostalCode,String> postOfficeColumn = new TableColumn<>("Post Office");
-        postOfficeColumn.setMinWidth(100);
+        postOfficeColumn.setMinWidth(200);
         postalCodeColumn.setCellValueFactory(new PropertyValueFactory<>("postOffice"));
 
         //3. column: municipality number
         TableColumn<PostalCode, String> municipalityNumberColumn = new TableColumn<>("Municipality number");
-        municipalityNumberColumn.setMinWidth(100);
+        municipalityNumberColumn.setMinWidth(200);
         municipalityNumberColumn.setCellValueFactory(new PropertyValueFactory<>("municipalityNumber"));
 
         //4. column: municipality name
         TableColumn<PostalCode, String> municipalityNameColumn = new TableColumn<>("Municipality name");
-        municipalityNameColumn.setMinWidth(100);
+        municipalityNameColumn.setMinWidth(200);
         municipalityNameColumn.setCellValueFactory(new PropertyValueFactory<>("municipalityName"));
 
         //5. column: category
         TableColumn<PostalCode, String> categoryColumn = new TableColumn<>("Category");
-        categoryColumn.setMinWidth(100);
+        categoryColumn.setMinWidth(200);
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
 
         postalCodeTableView = new TableView<>();
