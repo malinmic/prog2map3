@@ -1,15 +1,13 @@
 package no.ntnu.idatt2001.mmedvard.models;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 public class PostalCode {
 
-    protected String postalCode;
-    protected String postOffice;
-    protected String municipalityNumber;
-    protected String municipalityName;
-    protected String category;
+    public String postalCode;
+    public String postOffice;
+    public String municipalityNumber;
+    public String municipalityName;
+    public String category;
+
 
     public PostalCode(String postalCode, String postOffice, String municipalityNumber, String municipalityName, String category){
         this.postalCode = postalCode;
@@ -18,6 +16,7 @@ public class PostalCode {
         this.municipalityName = municipalityName;
         this.category = category;
     }
+
 
     public PostalCode() {
 
@@ -64,6 +63,7 @@ public class PostalCode {
     }
 
 
+
     /**
      * equals method to check if one postOffice is the same as another
      * @param otherPostalCode object
@@ -78,6 +78,7 @@ public class PostalCode {
         }
     }
 
+
     /**
      * hashCode method to generate hashCode from the postal code
      * @return hashCode
@@ -86,15 +87,16 @@ public class PostalCode {
         return postalCode.hashCode();
     }
 
+
     /**
      * toString to get information about a postal code
      * @return String of info
      */
+
     public String toString(){
         return "Postal Code: " + postalCode + "\nPost Office: " +
                 postOffice + "\nMunicipality number: " + municipalityNumber +
                 "\nMunicipality name: " + municipalityName + "\nCategory: " + category;
     }
-
 
 }
