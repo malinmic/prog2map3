@@ -11,7 +11,7 @@ public class FileManager {
         ArrayList<PostalCode> listOfPostalCodes= new ArrayList<>();
 
         try{
-            BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
             //new FileReader(file)
 
 
