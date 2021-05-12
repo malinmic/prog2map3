@@ -1,5 +1,7 @@
 package no.ntnu.idatt2001.mmedvard;
 import javafx.application.Application;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -26,8 +28,10 @@ public class PostalCodeApplication extends Application{
     private TableView<PostalCode> postalCodeTableView = new TableView<>();
     private MainController mainController;
     private PostalCodeRegistry postalCodeRegistry;
-    private ObservableList<PostalCode> postalCodeRegistryWrapper;
-    private ObservableList<PostalCode> filteredObservableList = FXCollections.observableArrayList();
+    //private ObservableList<PostalCode> postalCodeRegistryWrapper;
+    //private ObservableList<PostalCode> filteredObservableList;
+
+    private ObservableList<PostalCode> postalCodeRegistryWrapper = FXCollections.observableArrayList();
 
     public static void main(String[] args) {
         launch(args);
@@ -39,6 +43,7 @@ public class PostalCodeApplication extends Application{
         this.mainController = new MainController();
         this.postalCodeRegistry = new PostalCodeRegistry();
         this.postalCodeRegistryWrapper = getPostalCodeRegistryWrapper();
+        //this.filteredObservableList = FXCollections.observableArrayList(this.postalCodeRegistry.getPostalCodeArrayList());
     }
 
 
@@ -51,6 +56,119 @@ public class PostalCodeApplication extends Application{
         fillTable();
         MenuBar mainMenu = MenuBarFactory.create(mainController, postalCodeRegistry,this);
         ToolBar toolBar = ToolBarFactory.create(mainController,postalCodeRegistry,this);
+
+
+
+
+        TextField txtField = new TextField();
+        txtField.setPromptText("Search");
+        txtField.textProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable o) {
+
+                if(txtField.textProperty().get().isEmpty()){
+                    postalCodeTableView.setItems(postalCodeRegistryWrapper);
+                    return;
+                }
+
+                ObservableList<PostalCode> tableItems = FXCollections.observableArrayList();
+
+                ObservableList<TableColumn<PostalCode,?>> cols = postalCodeTableView.getColumns();
+
+                for(int i = 0; i < postalCodeRegistryWrapper.size(); i++){
+
+                    for(int j = 0; j < cols.size(); j++) {
+                        TableColumn col = cols.get(j);
+
+                        String cellValue = col.getCellData(postalCodeRegistryWrapper.get(i)).toString();
+
+                        cellValue = cellValue.toLowerCase();
+
+                        if(cellValue.contains(txtField.textProperty().get().toLowerCase())){
+
+                            tableItems.add(postalCodeRegistryWrapper.get(i));
+
+                            break;
+                        }
+                    }
+                }
+
+                postalCodeTableView.setItems(tableItems);
+            }
+        });
+
+
+
+
+
+
+        //----------REMOVE
+
+        /*
+
+
+        1. postalCodeTableView.setItems(postalCodeRegistryWrapper);
+
+        postalCodeTableView = new TableView<>();
+        ObservableList<PostalCode> observableListOfPostalCodes = this.postalCodeRegistryWrapper;
+
+
+        postalCodeTableView.setItems(observableListOfPostalCodes);
+        postalCodeTableView.getColumns().addAll(postalCodeColumn,postOfficeColumn,municipalityNumberColumn,municipalityNameColumn,categoryColumn);
+        postalCodeTableView.setItems(FXCollections.observableArrayList(this.postalCodeRegistry.getPostalCodeArrayList()));
+
+
+
+         */
+
+        //---------THIS
+
+
+
+
+
+
+
+
+        /*
+        FilteredList<PostalCode> filteredData = new FilteredList<>(postalCodeRegistryWrapper,b -> true);
+
+        TextField filterField = new TextField();
+
+        filterField.textProperty().addListener((observable, oldValue, newValue) ->{
+            filteredData.setPredicate(postalCode -> {
+
+                if(newValue == null || newValue.isEmpty()){
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if(postalCode.getPostalCode().toLowerCase().indexOf(lowerCaseFilter) != -1){
+                    return true;
+                }else if(postalCode.getPostOffice().toLowerCase().indexOf(lowerCaseFilter) != -1){
+                    return true;
+                }else
+                    return false;
+
+            });
+        });
+
+
+
+        SortedList<PostalCode> sortedData = new SortedList<>(filteredData);
+
+        sortedData.comparatorProperty().bind(postalCodeTableView.comparatorProperty());
+
+        postalCodeTableView.setItems(sortedData);
+        updateObservableList();
+
+
+
+
+         */
+
+
 
 
 
@@ -112,16 +230,91 @@ public class PostalCodeApplication extends Application{
             }
         });
 
-
  */
 
 
+        /*
+
+        filteredObservableList.addAll(postalCodeRegistryWrapper);
 
         TextField searchBox = new TextField();
-        searchBox.setOnKeyPressed(event -> searchMethod());
+        searchBox.setPromptText("Search");
+
+        FilteredList<PostalCode> filteredList = new FilteredList<>(postalCodeRegistryWrapper, p -> true);
+
+        searchBox.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(post -> {
+                if(newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCase = newValue.toLowerCase();
+
+                if(post.getPostalCode().toLowerCase().contains(lowerCase)) {
+                    return true;
+                }else if(post.getPostOffice().toLowerCase().contains(lowerCase)){
+                    return true;
+                }else{
+                    return false;
+                }
 
 
-        HBox hBox = new HBox(searchBox);
+
+         */
+
+                /*
+                if(post.getPostalCode().toLowerCase().contains(lowerCase) ||
+                post.getPostOffice().toLowerCase().contains(lowerCase) ||
+                post.getMunicipalityNumber().toLowerCase().contains(lowerCase) ||
+                post.getMunicipalityName().toLowerCase().contains(lowerCase) ||
+                post.getCategory().toLowerCase().contains(lowerCase)) {
+                    return true;
+                }
+                return false;
+
+
+
+                 */
+
+        /*
+            });
+
+
+        });
+
+        SortedList<PostalCode> sortedList = new SortedList<>(filteredList);
+
+        sortedList.comparatorProperty().bind(postalCodeTableView.comparatorProperty());
+
+        postalCodeTableView.setItems(sortedList);
+
+
+
+
+         */
+
+        //return postalCodeTableView;
+
+
+
+
+
+
+
+
+
+
+
+
+        //TextField searchBox = new TextField();
+        //searchBox.setOnKeyPressed(event -> searchMethod());
+
+        Button searchButton = new Button();
+        searchButton.setText("Search");
+        //searchButton.setOnAction(event -> );
+
+
+        HBox hBox = new HBox(txtField);
         hBox.setAlignment(Pos.TOP_LEFT);
 
 
@@ -137,6 +330,12 @@ public class PostalCodeApplication extends Application{
         primaryStage.setScene(scene);
 
         primaryStage.show();
+
+
+
+
+
+
 
 
 
@@ -162,10 +361,14 @@ public class PostalCodeApplication extends Application{
 
     }
 
+
     public void updateObservableList() throws IOException {
         this.postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
         this.postalCodeTableView.refresh();
     }
+
+
+
 
     public ObservableList<PostalCode> getPostalCodeRegistryWrapper() throws IOException {
         if(this.postalCodeRegistry == null){
@@ -175,6 +378,8 @@ public class PostalCodeApplication extends Application{
         }
         return postalCodeRegistryWrapper;
     }
+
+
 
 
     /**
@@ -226,61 +431,8 @@ public class PostalCodeApplication extends Application{
     }
 
 
-    private TableView<PostalCode> searchMethod(){
-
-        filteredObservableList.addAll(postalCodeRegistryWrapper);
-
-        TextField searchBox = new TextField();
-        searchBox.setPromptText("Search");
-
-        FilteredList<PostalCode> filteredList = new FilteredList<>(filteredObservableList, p -> true);
-
-        searchBox.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredList.setPredicate(post -> {
-                if(newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-
-                String lowerCase = newValue.toLowerCase();
-
-                if(post.getPostalCode().toLowerCase().contains(lowerCase)) {
-                    return true;
-                }else if(post.getPostOffice().toLowerCase().contains(lowerCase)){
-                    return true;
-                }else{
-                    return false;
-                }
 
 
-
-                /*
-                if(post.getPostalCode().toLowerCase().contains(lowerCase) ||
-                post.getPostOffice().toLowerCase().contains(lowerCase) ||
-                post.getMunicipalityNumber().toLowerCase().contains(lowerCase) ||
-                post.getMunicipalityName().toLowerCase().contains(lowerCase) ||
-                post.getCategory().toLowerCase().contains(lowerCase)) {
-                    return true;
-                }
-                return false;
-
-
-
-                 */
-            });
-
-
-        });
-
-        SortedList<PostalCode> sortedList = new SortedList<>(filteredList);
-
-        sortedList.comparatorProperty().bind(postalCodeTableView.comparatorProperty());
-
-        postalCodeTableView.setItems(sortedList);
-
-        return postalCodeTableView;
-
-
-    }
 
 
 

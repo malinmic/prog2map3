@@ -1,5 +1,11 @@
 package no.ntnu.idatt2001.mmedvard.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import no.ntnu.idatt2001.mmedvard.PostalCodeApplication;
 import no.ntnu.idatt2001.mmedvard.models.FileManager;
 import no.ntnu.idatt2001.mmedvard.models.PostalCode;
@@ -22,6 +28,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class MainController {
+
+    PostalCodeRegistry postalCodeRegistry = new PostalCodeRegistry();
+
+    ObservableList<PostalCode> obserableListPost = FXCollections.observableArrayList(this.postalCodeRegistry.getPostalCodeArrayList());
 
 
     public void exit(javafx.event.ActionEvent event){
@@ -64,6 +74,77 @@ public class MainController {
         parent.updateObservableList();
     }
 
+
+
+    /*
+
+    public FilteredList<PostalCode> filteredListMethod(KeyEvent event, PostalCodeRegistry postalCodeRegistry, PostalCodeApplication parent) throws Exception{
+
+
+        filteredObservableList.addAll(postalCodeRegistryWrapper);
+
+        TextField searchBox = new TextField();
+        searchBox.setPromptText("Search");
+
+        FilteredList<PostalCode> filteredList = new FilteredList<>(postalCodeRegistryWrapper, p -> true);
+
+        searchBox.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(post -> {
+                if(newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCase = newValue.toLowerCase();
+
+                if(post.getPostalCode().toLowerCase().contains(lowerCase)) {
+                    return true;
+                }else if(post.getPostOffice().toLowerCase().contains(lowerCase)){
+                    return true;
+                }else{
+                    return false;
+                }
+
+
+
+     */
+
+                /*
+                if(post.getPostalCode().toLowerCase().contains(lowerCase) ||
+                post.getPostOffice().toLowerCase().contains(lowerCase) ||
+                post.getMunicipalityNumber().toLowerCase().contains(lowerCase) ||
+                post.getMunicipalityName().toLowerCase().contains(lowerCase) ||
+                post.getCategory().toLowerCase().contains(lowerCase)) {
+                    return true;
+                }
+                return false;
+
+
+
+                 */
+
+
+    /*
+            });
+
+
+        });
+
+
+
+
+
+        SortedList<PostalCode> sortedList = new SortedList<>(filteredList);
+
+        sortedList.comparatorProperty().bind(postalCodeTableView.comparatorProperty());
+
+        postalCodeTableView.setItems(sortedList);
+
+        //return postalCodeTableView;
+    }
+
+
+
+     */
 
 
     /*
