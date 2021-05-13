@@ -23,6 +23,27 @@ public class PostalCode {
      * @param category category
      */
     public PostalCode(String postalCode, String postOffice, String municipalityNumber, String municipalityName, String category){
+
+        if(postalCode == null || postalCode.trim().isEmpty()){
+            throw new IllegalArgumentException("Postal Code cannot be null");
+        }
+
+        if(postOffice == null || postOffice.trim().isEmpty()){
+            throw new IllegalArgumentException("Post Office cannot be null");
+        }
+
+        if(municipalityNumber == null || municipalityNumber.trim().isEmpty()){
+            throw new IllegalArgumentException("Municipality number cannot be null");
+        }
+
+        if(municipalityName == null || municipalityName.trim().isEmpty()){
+            throw new IllegalArgumentException("Municipality name cannot be null");
+        }
+
+        if(category == null || category.trim().isEmpty()){
+            throw new IllegalArgumentException("Category cannot be null");
+        }
+
         this.postalCode = postalCode;
         this.postOffice = postOffice;
         this.municipalityNumber = municipalityNumber;
@@ -35,42 +56,116 @@ public class PostalCode {
 
     }
 
+
+    /**
+     * set Postal Code
+     * @param postalCode postal code
+     */
     public void setPostalCode(String postalCode) {
+
+        if(postalCode == null) {
+            throw new IllegalArgumentException("Postal Code cannot be null");
+        }
+
         this.postalCode = postalCode;
     }
 
+
+    /**
+     * set Post Office
+     * @param postOffice post office
+     */
     public void setPostOffice(String postOffice) {
+
+        if(postOffice == null) {
+            throw new IllegalArgumentException("Post Office cannot be null");
+        }
+
         this.postOffice = postOffice;
     }
 
+
+    /**
+     * set Municipality number
+     * @param municipalityNumber municipality number
+     */
     public void setMunicipalityNumber(String municipalityNumber) {
+
+        if(municipalityNumber == null) {
+            throw new IllegalArgumentException("Municipality number cannot be null");
+        }
+
         this.municipalityNumber = municipalityNumber;
     }
 
+    /**
+     * set Municipality name
+     * @param municipalityName municipality name
+     */
     public void setMunicipalityName(String municipalityName) {
+
+        if(municipalityName == null) {
+            throw new IllegalArgumentException("Municipality name cannot be null");
+        }
+
         this.municipalityName = municipalityName;
     }
 
+
+    /**
+     * set Category
+     * @param category category
+     */
     public void setCategory(String category) {
+
+        if(category == null) {
+            throw new IllegalArgumentException("Category cannot be null");
+        }
+
         this.category = category;
     }
 
+
+    /**
+     * gets the postal code
+     * @return String postal code
+     */
     public String getPostalCode() {
         return postalCode;
     }
 
+
+    /**
+     * gets post office
+     * @return String post office
+     */
     public String getPostOffice() {
         return postOffice;
     }
 
+
+    /**
+     * gets municipality number
+     * @return String municipality number
+     */
     public String getMunicipalityNumber() {
         return municipalityNumber;
     }
 
+
+    /**
+     * gets municipality name
+     * @return String municipality name
+     */
     public String getMunicipalityName() {
         return municipalityName;
     }
 
+
+    /**
+     * gets category
+     * @return String category
+     */
     public String getCategory() {
         return category;
     }

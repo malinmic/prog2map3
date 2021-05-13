@@ -6,16 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="85548283-8abe-4ed5-ad33-be62a1dfcba2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/FileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/PostalCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/PostalCode.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +20,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1sTdrDRZpLWXI5ZOm7Yh2elx5YL" />
   <component name="ProjectLevelVcsManager">
@@ -45,9 +48,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Maven.Mappe3 [clean,javafx:run]">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="no.ntnu.idatt2001.mmedvard.models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PostalCodeTest.constructor_nullPostalOffice_throws">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -57,6 +70,69 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mappe3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="no.ntnu.idatt2001.mmedvard.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="no.ntnu.idatt2001.mmedvard.models" />
+      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.FileManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileManagerTest.importFromFile_imports" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mappe3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="no.ntnu.idatt2001.mmedvard.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="no.ntnu.idatt2001.mmedvard.models" />
+      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.FileManagerTest" />
+      <option name="METHOD_NAME" value="importFromFile_imports" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostalCodeTest.constructor_nullPostalCode_throws" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mappe3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="no.ntnu.idatt2001.mmedvard.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="no.ntnu.idatt2001.mmedvard.models" />
+      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.PostalCodeTest" />
+      <option name="METHOD_NAME" value="constructor_nullPostalCode_throws" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostalCodeTest.constructor_nullPostalOffice_throws" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mappe3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="no.ntnu.idatt2001.mmedvard.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="no.ntnu.idatt2001.mmedvard.models" />
+      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.PostalCodeTest" />
+      <option name="METHOD_NAME" value="constructor_nullPostalOffice_throws" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -116,7 +192,19 @@
     <list>
       <item itemvalue="Maven.Mappe3 [clean,install]" />
       <item itemvalue="Maven.Mappe3 [clean,javafx:run]" />
+      <item itemvalue="JUnit.FileManagerTest.importFromFile_imports" />
+      <item itemvalue="JUnit.FileManagerTest" />
+      <item itemvalue="JUnit.PostalCodeTest.constructor_nullPostalCode_throws" />
+      <item itemvalue="JUnit.PostalCodeTest.constructor_nullPostalOffice_throws" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PostalCodeTest.constructor_nullPostalOffice_throws" />
+        <item itemvalue="JUnit.PostalCodeTest.constructor_nullPostalCode_throws" />
+        <item itemvalue="JUnit.FileManagerTest" />
+        <item itemvalue="JUnit.FileManagerTest.importFromFile_imports" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -127,7 +215,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620900713176</updated>
       <workItem from="1620900716195" duration="236000" />
-      <workItem from="1620900966921" duration="10029000" />
+      <workItem from="1620900966921" duration="15137000" />
     </task>
     <servers />
   </component>

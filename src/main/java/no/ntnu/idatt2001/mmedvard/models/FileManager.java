@@ -15,7 +15,7 @@ public class FileManager {
      * @param file file to be read
      * @return an ArrayList containing all postal codes in the file
      */
-    public static ArrayList<PostalCode> importFromFile(File file) {
+    public static ArrayList<PostalCode> importFromFile(File file) throws IOException{
 
         ArrayList<PostalCode> listOfPostalCodes= new ArrayList<>();
 
@@ -26,7 +26,7 @@ public class FileManager {
 
             while((s = buffer.readLine()) != null){
                 String[] string = s.split("\t");
-                PostalCode post = new PostalCode(string[0],string[1],string[2],string[3],string[4]);
+                PostalCode post = new PostalCode(string[0].trim(),string[1].trim(),string[2].trim(),string[3].trim(),string[4].trim());
                 listOfPostalCodes.add(post);
             }
 
