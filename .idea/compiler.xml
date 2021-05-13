@@ -9,5 +9,8 @@
         <module name="Mappe3" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Mappe3" target="14" />
+    </bytecodeTargetLevel>
   </component>
 </project>
