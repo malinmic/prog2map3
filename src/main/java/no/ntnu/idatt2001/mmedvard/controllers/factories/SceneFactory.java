@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 
 /**
  * Scene factory
+ * Creates the Scene
  */
 public class SceneFactory {
 

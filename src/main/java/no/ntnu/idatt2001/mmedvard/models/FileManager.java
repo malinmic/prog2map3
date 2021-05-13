@@ -20,17 +20,17 @@ public class FileManager {
         ArrayList<PostalCode> listOfPostalCodes= new ArrayList<>();
 
         try{
-            BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+            BufferedReader buffah = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 
             String s;
 
-            while((s = buffer.readLine()) != null){
+            while((s = buffah.readLine()) != null){
                 String[] string = s.split("\t");
-                PostalCode post = new PostalCode(string[0].trim(),string[1].trim(),string[2].trim(),string[3].trim(),string[4].trim());
+                PostalCode post = new PostalCode(string[0],string[1],string[2],string[3],string[4]);
                 listOfPostalCodes.add(post);
             }
 
-            buffer.close();
+            buffah.close();
 
 
         }catch (IOException exception){

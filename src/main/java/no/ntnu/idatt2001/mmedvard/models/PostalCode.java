@@ -63,7 +63,7 @@ public class PostalCode {
      */
     public void setPostalCode(String postalCode) {
 
-        if(postalCode == null) {
+        if(postalCode == null || postalCode.trim().length() == 0) {
             throw new IllegalArgumentException("Postal Code cannot be null");
         }
 
@@ -77,7 +77,7 @@ public class PostalCode {
      */
     public void setPostOffice(String postOffice) {
 
-        if(postOffice == null) {
+        if(postOffice == null || postOffice.trim().length() == 0) {
             throw new IllegalArgumentException("Post Office cannot be null");
         }
 
@@ -91,7 +91,7 @@ public class PostalCode {
      */
     public void setMunicipalityNumber(String municipalityNumber) {
 
-        if(municipalityNumber == null) {
+        if(municipalityNumber == null || municipalityNumber.trim().length() == 0) {
             throw new IllegalArgumentException("Municipality number cannot be null");
         }
 
@@ -104,7 +104,7 @@ public class PostalCode {
      */
     public void setMunicipalityName(String municipalityName) {
 
-        if(municipalityName == null) {
+        if(municipalityName == null || municipalityName.trim().length() == 0) {
             throw new IllegalArgumentException("Municipality name cannot be null");
         }
 
@@ -118,7 +118,7 @@ public class PostalCode {
      */
     public void setCategory(String category) {
 
-        if(category == null) {
+        if(category == null || category.trim().length() == 0) {
             throw new IllegalArgumentException("Category cannot be null");
         }
 

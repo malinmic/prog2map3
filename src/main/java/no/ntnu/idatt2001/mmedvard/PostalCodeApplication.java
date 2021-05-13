@@ -59,39 +59,39 @@ public class PostalCodeApplication extends Application{
 
 
         //------------- SEARCH BOX ----------------
-        TextField txtField = new TextField();
-        txtField.setPromptText("Type here to search");
+        TextField searchBox = new TextField();
+        searchBox.setPromptText("Type here to search :)");
 
-        txtField.textProperty().addListener(o -> {
+        searchBox.textProperty().addListener(o -> {
 
-            if(txtField.textProperty().get().isEmpty()){
+            if(searchBox.textProperty().get().isEmpty()){
                 postalCodeTableView.setItems(postalCodeRegistryWrapper);
                 return;
             }
 
-            ObservableList<PostalCode> tableItems = FXCollections.observableArrayList();
+            ObservableList<PostalCode> tempTable = FXCollections.observableArrayList();
 
-            ObservableList<TableColumn<PostalCode,?>> cols = postalCodeTableView.getColumns();
+            ObservableList<TableColumn<PostalCode,?>> columns = postalCodeTableView.getColumns();
 
             for(int i = 0; i < postalCodeRegistryWrapper.size(); i++){
 
-                for(int j = 0; j < cols.size(); j++) {
-                    TableColumn col = cols.get(j);
+                for(int j = 0; j < columns.size(); j++) {
+                    TableColumn tableColumn = columns.get(j);
 
-                    String cellValue = col.getCellData(postalCodeRegistryWrapper.get(i)).toString();
+                    String cellValue = tableColumn.getCellData(postalCodeRegistryWrapper.get(i)).toString();
 
                     cellValue = cellValue.toLowerCase();
 
-                    if(cellValue.contains(txtField.textProperty().get().toLowerCase())){
+                    if(cellValue.contains(searchBox.textProperty().get().toLowerCase())){
 
-                        tableItems.add(postalCodeRegistryWrapper.get(i));
+                        tempTable.add(postalCodeRegistryWrapper.get(i));
 
                         break;
                     }
                 }
             }
 
-            postalCodeTableView.setItems(tableItems);
+            postalCodeTableView.setItems(tempTable);
         });
 
 
@@ -100,7 +100,7 @@ public class PostalCodeApplication extends Application{
 
 
         //--------- Setting up the GUI ----------
-        HBox hBox = new HBox(txtField);
+        HBox hBox = new HBox(searchBox);
         hBox.setAlignment(Pos.TOP_LEFT);
 
         VBox topContainer = new VBox();

@@ -6,10 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="85548283-8abe-4ed5-ad33-be62a1dfcba2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/FileManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/PostalCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/PostalCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/no/ntnu/idatt2001/mmedvard/models/PostalCodeTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +70,7 @@
       <recent name="no.ntnu.idatt2001.mmedvard.models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PostalCodeTest.constructor_nullPostalOffice_throws">
+  <component name="RunManager" selected="JUnit.FileManagerTest">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -105,7 +115,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostalCodeTest.constructor_nullPostalCode_throws" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostalCodeRegistryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mappe3" />
       <extension name="coverage">
         <pattern>
@@ -114,14 +124,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="no.ntnu.idatt2001.mmedvard.models" />
-      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.PostalCodeTest" />
-      <option name="METHOD_NAME" value="constructor_nullPostalCode_throws" />
+      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostalCodeRegistryTest.addPostalCode_legalPostalCode_addsPostalCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mappe3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="no.ntnu.idatt2001.mmedvard.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="no.ntnu.idatt2001.mmedvard.models" />
+      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistryTest" />
+      <option name="METHOD_NAME" value="addPostalCode_legalPostalCode_addsPostalCode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostalCodeTest.constructor_nullPostalOffice_throws" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostalCodeRegistryTest.getPostalCodeArrayList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mappe3" />
       <extension name="coverage">
         <pattern>
@@ -130,8 +155,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="no.ntnu.idatt2001.mmedvard.models" />
-      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.PostalCodeTest" />
-      <option name="METHOD_NAME" value="constructor_nullPostalOffice_throws" />
+      <option name="MAIN_CLASS_NAME" value="no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistryTest" />
+      <option name="METHOD_NAME" value="getPostalCodeArrayList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -192,17 +217,19 @@
     <list>
       <item itemvalue="Maven.Mappe3 [clean,install]" />
       <item itemvalue="Maven.Mappe3 [clean,javafx:run]" />
+      <item itemvalue="JUnit.PostalCodeRegistryTest.getPostalCodeArrayList" />
+      <item itemvalue="JUnit.PostalCodeRegistryTest.addPostalCode_legalPostalCode_addsPostalCode" />
+      <item itemvalue="JUnit.PostalCodeRegistryTest" />
       <item itemvalue="JUnit.FileManagerTest.importFromFile_imports" />
       <item itemvalue="JUnit.FileManagerTest" />
-      <item itemvalue="JUnit.PostalCodeTest.constructor_nullPostalCode_throws" />
-      <item itemvalue="JUnit.PostalCodeTest.constructor_nullPostalOffice_throws" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PostalCodeTest.constructor_nullPostalOffice_throws" />
-        <item itemvalue="JUnit.PostalCodeTest.constructor_nullPostalCode_throws" />
         <item itemvalue="JUnit.FileManagerTest" />
         <item itemvalue="JUnit.FileManagerTest.importFromFile_imports" />
+        <item itemvalue="JUnit.PostalCodeRegistryTest" />
+        <item itemvalue="JUnit.PostalCodeRegistryTest.addPostalCode_legalPostalCode_addsPostalCode" />
+        <item itemvalue="JUnit.PostalCodeRegistryTest.getPostalCodeArrayList" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +242,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620900713176</updated>
       <workItem from="1620900716195" duration="236000" />
-      <workItem from="1620900966921" duration="15137000" />
+      <workItem from="1620900966921" duration="22862000" />
     </task>
     <servers />
   </component>
