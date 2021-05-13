@@ -16,8 +16,16 @@ import javafx.stage.Stage;
 import java.io.File;
 
 
+/**
+ * Class containing methods for buttons in menu bar
+ */
 public class MainController {
 
+
+    /**
+     * Opens confirmation dialog window to confirm exit of program
+     * @param event event
+     */
     public void exit(javafx.event.ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Exit");
@@ -31,6 +39,10 @@ public class MainController {
     }
 
 
+    /**
+     * Opens About dialog window with information about the Application
+     * @param version verison of the application
+     */
     public void aboutDialog(String version){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About");
@@ -40,6 +52,13 @@ public class MainController {
     }
 
 
+    /**
+     * onAction for import from file button
+     * @param event event
+     * @param postalCodeRegistry postal code registry
+     * @param parent parent
+     * @throws IOException exception
+     */
     public void importFromFile(ActionEvent event, PostalCodeRegistry postalCodeRegistry, PostalCodeApplication parent) throws IOException {
         FileChooser chooser = new FileChooser();
         File file = chooser.showOpenDialog(new Stage());

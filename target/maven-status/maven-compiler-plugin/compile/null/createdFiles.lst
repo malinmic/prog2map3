@@ -1,9 +1,8 @@
 no\ntnu\idatt2001\mmedvard\models\PostalCode.class
-no\ntnu\idatt2001\mmedvard\controllers\factories\MenuBarFactory.class
-no\ntnu\idatt2001\mmedvard\controllers\MainController.class
-no\ntnu\idatt2001\mmedvard\models\FileManager.class
 no\ntnu\idatt2001\mmedvard\models\PostalCodeRegistry.class
 module-info.class
-no\ntnu\idatt2001\mmedvard\PostalCodeApplication$1.class
+no\ntnu\idatt2001\mmedvard\controllers\factories\MenuBarFactory.class
 no\ntnu\idatt2001\mmedvard\controllers\factories\SceneFactory.class
+no\ntnu\idatt2001\mmedvard\controllers\MainController.class
 no\ntnu\idatt2001\mmedvard\PostalCodeApplication.class
+no\ntnu\idatt2001\mmedvard\models\FileManager.class

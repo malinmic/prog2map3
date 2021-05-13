@@ -1,6 +1,10 @@
 package no.ntnu.idatt2001.mmedvard.models;
 
 
+/**
+ * Class representing an object of postal code with details about postal code, post office, municipality number, municipality name and category.
+ */
+
 public class PostalCode {
 
     public String postalCode;
@@ -10,6 +14,14 @@ public class PostalCode {
     public String category;
 
 
+    /**
+     * Constructs new postal code
+     * @param postalCode postal code
+     * @param postOffice post office name
+     * @param municipalityNumber municipality number
+     * @param municipalityName municipality name
+     * @param category category
+     */
     public PostalCode(String postalCode, String postOffice, String municipalityNumber, String municipalityName, String category){
         this.postalCode = postalCode;
         this.postOffice = postOffice;
@@ -91,9 +103,8 @@ public class PostalCode {
 
     /**
      * toString to get information about a postal code
-     * @return String of info
+     * @return String of all postal code fields
      */
-
     public String toString(){
         return "Postal Code: " + postalCode + "\nPost Office: " +
                 postOffice + "\nMunicipality number: " + municipalityNumber +

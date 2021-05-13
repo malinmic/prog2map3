@@ -5,49 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85548283-8abe-4ed5-ad33-be62a1dfcba2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mappe3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mappe3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/MenuBarFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/MenuBarFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/ToolBarFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/factories/ToolBarFactory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/null/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1sTdrDRZpLWXI5ZOm7Yh2elx5YL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -57,6 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager" selected="Maven.Mappe3 [clean,javafx:run]">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
@@ -138,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620900713176</updated>
       <workItem from="1620900716195" duration="236000" />
-      <workItem from="1620900966921" duration="3634000" />
+      <workItem from="1620900966921" duration="10029000" />
     </task>
     <servers />
   </component>

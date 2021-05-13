@@ -5,21 +5,21 @@ import no.ntnu.idatt2001.mmedvard.models.PostalCodeRegistry;
 import no.ntnu.idatt2001.mmedvard.controllers.factories.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import no.ntnu.idatt2001.mmedvard.models.PostalCode;
-import javafx.beans.InvalidationListener;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import javafx.scene.layout.BorderPane;
 import javafx.application.Application;
-import javafx.beans.Observable;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.*;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import java.io.*;
 
 
+/**
+ * Main class for the Postal Code Registry Application
+ */
 public class PostalCodeApplication extends Application{
 
     private TableView<PostalCode> postalCodeTableView = new TableView<>();
@@ -51,7 +51,6 @@ public class PostalCodeApplication extends Application{
         primaryStage.setTitle("Postal Code Registry");
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
-
         createTable();
         MenuBar mainMenu = MenuBarFactory.create(mainController, postalCodeRegistry,this);
 
@@ -59,42 +58,40 @@ public class PostalCodeApplication extends Application{
 
 
 
-
+        //------------- SEARCH BOX ----------------
         TextField txtField = new TextField();
         txtField.setPromptText("Type here to search");
-        txtField.textProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable o) {
 
-                if(txtField.textProperty().get().isEmpty()){
-                    postalCodeTableView.setItems(postalCodeRegistryWrapper);
-                    return;
-                }
+        txtField.textProperty().addListener(o -> {
 
-                ObservableList<PostalCode> tableItems = FXCollections.observableArrayList();
+            if(txtField.textProperty().get().isEmpty()){
+                postalCodeTableView.setItems(postalCodeRegistryWrapper);
+                return;
+            }
 
-                ObservableList<TableColumn<PostalCode,?>> cols = postalCodeTableView.getColumns();
+            ObservableList<PostalCode> tableItems = FXCollections.observableArrayList();
 
-                for(int i = 0; i < postalCodeRegistryWrapper.size(); i++){
+            ObservableList<TableColumn<PostalCode,?>> cols = postalCodeTableView.getColumns();
 
-                    for(int j = 0; j < cols.size(); j++) {
-                        TableColumn col = cols.get(j);
+            for(int i = 0; i < postalCodeRegistryWrapper.size(); i++){
 
-                        String cellValue = col.getCellData(postalCodeRegistryWrapper.get(i)).toString();
+                for(int j = 0; j < cols.size(); j++) {
+                    TableColumn col = cols.get(j);
 
-                        cellValue = cellValue.toLowerCase();
+                    String cellValue = col.getCellData(postalCodeRegistryWrapper.get(i)).toString();
 
-                        if(cellValue.contains(txtField.textProperty().get().toLowerCase())){
+                    cellValue = cellValue.toLowerCase();
 
-                            tableItems.add(postalCodeRegistryWrapper.get(i));
+                    if(cellValue.contains(txtField.textProperty().get().toLowerCase())){
 
-                            break;
-                        }
+                        tableItems.add(postalCodeRegistryWrapper.get(i));
+
+                        break;
                     }
                 }
-
-                postalCodeTableView.setItems(tableItems);
             }
+
+            postalCodeTableView.setItems(tableItems);
         });
 
 
@@ -102,38 +99,42 @@ public class PostalCodeApplication extends Application{
 
 
 
-
+        //--------- Setting up the GUI ----------
         HBox hBox = new HBox(txtField);
         hBox.setAlignment(Pos.TOP_LEFT);
-
 
         VBox topContainer = new VBox();
         topContainer.getChildren().add(mainMenu);
         topContainer.getChildren().add(hBox);
 
-
         BorderPane borderPane = new BorderPane();
         borderPane.setCenter(this.postalCodeTableView);
         borderPane.setTop(topContainer);
 
-
         Scene scene = SceneFactory.create(borderPane);
         primaryStage.setScene(scene);
-
 
         primaryStage.show();
 
     }
 
 
-    public void updateObservableList() throws IOException {
+
+
+    /**
+     * Updates the table
+     */
+    public void updateObservableList(){
         this.postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
         this.postalCodeTableView.refresh();
     }
 
 
-
-    public ObservableList<PostalCode> getPostalCodeRegistryWrapper() throws IOException {
+    /**
+     * Gets observable wrapper for list of postal codes
+     * @return observable list of postal codes
+     */
+    public ObservableList<PostalCode> getPostalCodeRegistryWrapper() {
         if(this.postalCodeRegistry == null){
             postalCodeRegistryWrapper = null;
         }else{
@@ -145,10 +146,12 @@ public class PostalCodeApplication extends Application{
 
 
 
+
+
     /**
-     * method to create table with postal codes
+     * Creates the table with postal codes
      */
-    private void createTable() throws IOException {
+    private void createTable(){
 
         //1. column: postal code
         TableColumn<PostalCode,String> postalCodeColumn = new TableColumn<>("Postal Code");
@@ -156,7 +159,7 @@ public class PostalCodeApplication extends Application{
         postalCodeColumn.setCellValueFactory(new PropertyValueFactory<PostalCode,String>("postalCode"));
 
         //2. column: post office
-        TableColumn<PostalCode,String> postOfficeColumn = new TableColumn<>("Office");
+        TableColumn<PostalCode,String> postOfficeColumn = new TableColumn<>("Post Office");
         postOfficeColumn.setMinWidth(200);
         postOfficeColumn.setCellValueFactory(new PropertyValueFactory<PostalCode,String>("postOffice"));
 
@@ -187,21 +190,12 @@ public class PostalCodeApplication extends Application{
 
 
 
-
-    /**
-     *
-     * @throws Exception
-     */
     @Override
     public void stop() throws Exception {
         super.stop();
     }
 
 
-    /**
-     *
-     * @return
-     */
     public TableView<PostalCode> getPostalCodeTableView(){
         return this.postalCodeTableView;
     }

@@ -5,6 +5,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 
+/**
+ * Scene factory
+ */
 public class SceneFactory {
 
     public static Scene create(Parent parent){

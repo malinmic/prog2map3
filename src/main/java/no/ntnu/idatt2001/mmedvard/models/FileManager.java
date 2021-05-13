@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.io.*;
 
 
+/**
+ * Contains static method for reading the file containing the list of postal codes
+ */
 public class FileManager {
 
-
-    public static ArrayList<PostalCode> importFromFile(File file){
+    /**
+     * Reads file and makes an arrayList of postal codes from the specified file
+     *
+     * @param file file to be read
+     * @return an ArrayList containing all postal codes in the file
+     */
+    public static ArrayList<PostalCode> importFromFile(File file) {
 
         ArrayList<PostalCode> listOfPostalCodes= new ArrayList<>();
 
