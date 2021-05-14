@@ -7,18 +7,22 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class FileManagerTest {
 
     @Test
-    void importFromFile_imports() {
+    void importFromFile_imports() throws IOException {
+
 
         try{
             Assertions.assertEquals(List.of(new PostalCode("8803","Sandnessjøen","1820","Alstahaug","G")),FileManager.importFromFile(new File("src/test/java/no/ntnu/idatt2001/mmedvard/resources/TestPostalCode.txt")));
         } catch (IOException exception) {
             Assertions.fail();
         }
+
+
     }
 
 

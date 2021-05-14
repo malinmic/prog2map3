@@ -52,11 +52,6 @@ public class PostalCode {
     }
 
 
-    public PostalCode() {
-
-    }
-
-
     /**
      * set Postal Code
      * @param postalCode postal code

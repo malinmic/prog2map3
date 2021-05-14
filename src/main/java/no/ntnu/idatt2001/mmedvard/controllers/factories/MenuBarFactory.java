@@ -37,7 +37,7 @@ public class MenuBarFactory {
 
         //---------- File > Exit
         MenuItem exit = new MenuItem("Exit");
-        exit.setOnAction(event -> mainController.exit(event));
+        exit.setOnAction(mainController::exit);
 
 
 

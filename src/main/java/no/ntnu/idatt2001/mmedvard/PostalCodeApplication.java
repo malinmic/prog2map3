@@ -73,21 +73,12 @@ public class PostalCodeApplication extends Application{
 
             ObservableList<TableColumn<PostalCode,?>> columns = postalCodeTableView.getColumns();
 
-            for(int i = 0; i < postalCodeRegistryWrapper.size(); i++){
+            for (PostalCode postalCode : postalCodeRegistryWrapper) {
 
-                for(int j = 0; j < columns.size(); j++) {
-                    TableColumn tableColumn = columns.get(j);
-
-                    String cellValue = tableColumn.getCellData(postalCodeRegistryWrapper.get(i)).toString();
-
-                    cellValue = cellValue.toLowerCase();
-
-                    if(cellValue.contains(searchBox.textProperty().get().toLowerCase())){
-
-                        tempTable.add(postalCodeRegistryWrapper.get(i));
-
-                        break;
-                    }
+                if (columns.stream().map(tableColumn -> tableColumn.getCellData(postalCode).toString()).
+                        map(String::toLowerCase).anyMatch(cellValue ->
+                        cellValue.contains(searchBox.textProperty().get().toLowerCase()))) {
+                    tempTable.add(postalCode);
                 }
             }
 
@@ -156,27 +147,27 @@ public class PostalCodeApplication extends Application{
         //1. column: postal code
         TableColumn<PostalCode,String> postalCodeColumn = new TableColumn<>("Postal Code");
         postalCodeColumn.setMinWidth(100);
-        postalCodeColumn.setCellValueFactory(new PropertyValueFactory<PostalCode,String>("postalCode"));
+        postalCodeColumn.setCellValueFactory(new PropertyValueFactory<>("postalCode"));
 
         //2. column: post office
         TableColumn<PostalCode,String> postOfficeColumn = new TableColumn<>("Post Office");
         postOfficeColumn.setMinWidth(200);
-        postOfficeColumn.setCellValueFactory(new PropertyValueFactory<PostalCode,String>("postOffice"));
+        postOfficeColumn.setCellValueFactory(new PropertyValueFactory<>("postOffice"));
 
         //3. column: municipality number
         TableColumn<PostalCode, String> municipalityNumberColumn = new TableColumn<>("Municipality number");
         municipalityNumberColumn.setMinWidth(200);
-        municipalityNumberColumn.setCellValueFactory(new PropertyValueFactory<PostalCode,String>("municipalityNumber"));
+        municipalityNumberColumn.setCellValueFactory(new PropertyValueFactory<>("municipalityNumber"));
 
         //4. column: municipality name
         TableColumn<PostalCode, String> municipalityNameColumn = new TableColumn<>("Municipality name");
         municipalityNameColumn.setMinWidth(200);
-        municipalityNameColumn.setCellValueFactory(new PropertyValueFactory<PostalCode,String>("municipalityName"));
+        municipalityNameColumn.setCellValueFactory(new PropertyValueFactory<>("municipalityName"));
 
         //5. column: category
         TableColumn<PostalCode, String> categoryColumn = new TableColumn<>("Category");
         categoryColumn.setMinWidth(100);
-        categoryColumn.setCellValueFactory(new PropertyValueFactory<PostalCode,String>("category"));
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
 
 
         //Setting columns into the tableview and populating it with a list of postal codes details

@@ -7,15 +7,10 @@
     <list default="true" id="85548283-8abe-4ed5-ad33-be62a1dfcba2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/MenuBarFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/MenuBarFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/controllers/factories/SceneFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/FileManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/PostalCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/PostalCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.class" beforeDir="false" />
@@ -70,20 +65,7 @@
       <recent name="no.ntnu.idatt2001.mmedvard.models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FileManagerTest">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Maven.Mappe3 [clean,javafx:run]">
     <configuration name="FileManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mappe3" />
       <extension name="coverage">
@@ -215,13 +197,13 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Maven.Mappe3 [clean,install]" />
-      <item itemvalue="Maven.Mappe3 [clean,javafx:run]" />
       <item itemvalue="JUnit.PostalCodeRegistryTest.getPostalCodeArrayList" />
       <item itemvalue="JUnit.PostalCodeRegistryTest.addPostalCode_legalPostalCode_addsPostalCode" />
       <item itemvalue="JUnit.PostalCodeRegistryTest" />
       <item itemvalue="JUnit.FileManagerTest.importFromFile_imports" />
       <item itemvalue="JUnit.FileManagerTest" />
+      <item itemvalue="Maven.Mappe3 [clean,install]" />
+      <item itemvalue="Maven.Mappe3 [clean,javafx:run]" />
     </list>
     <recent_temporary>
       <list>
@@ -242,7 +224,10 @@
       <option name="presentableId" value="Default" />
       <updated>1620900713176</updated>
       <workItem from="1620900716195" duration="236000" />
-      <workItem from="1620900966921" duration="22862000" />
+      <workItem from="1620900966921" duration="26585000" />
+      <workItem from="1620974059198" duration="2332000" />
+      <workItem from="1620985543619" duration="120000" />
+      <workItem from="1620985726876" duration="781000" />
     </task>
     <servers />
   </component>

@@ -41,7 +41,7 @@ public class MainController {
 
     /**
      * Opens About dialog window with information about the Application
-     * @param version verison of the application
+     * @param version version of the application
      */
     public void aboutDialog(String version){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
