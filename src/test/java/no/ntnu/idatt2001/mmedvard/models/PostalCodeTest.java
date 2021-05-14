@@ -204,7 +204,7 @@ class PostalCodeTest {
     }
 
     @Test
-    void getCategory() {
+    void getCategory_gets() {
         PostalCode post = new PostalCode("8803","Sandnessjøen","1820","Alstahaug","G");
 
         Assertions.assertEquals("G",post.getCategory());

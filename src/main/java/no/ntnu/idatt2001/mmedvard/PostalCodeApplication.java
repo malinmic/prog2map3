@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 
 /**
  * Main class for the Postal Code Registry Application
+ * Contains the setup for the GUI as well as the TableView and search field
  */
 public class PostalCodeApplication extends Application{
 
@@ -59,8 +60,9 @@ public class PostalCodeApplication extends Application{
 
 
         //------------- SEARCH BOX ----------------
+        // searches every field in the list for what user types, not case sensitive
         TextField searchBox = new TextField();
-        searchBox.setPromptText("Type here to search :)");
+        searchBox.setPromptText("Search for anything in list");
 
         searchBox.textProperty().addListener(o -> {
 
@@ -115,10 +117,12 @@ public class PostalCodeApplication extends Application{
     /**
      * Updates the table
      */
-    public void updateObservableList(){
+    public void updateObservableList() {
         this.postalCodeTableView.setItems(getPostalCodeRegistryWrapper());
         this.postalCodeTableView.refresh();
     }
+
+
 
 
     /**
@@ -133,8 +137,6 @@ public class PostalCodeApplication extends Application{
         }
         return postalCodeRegistryWrapper;
     }
-
-
 
 
 

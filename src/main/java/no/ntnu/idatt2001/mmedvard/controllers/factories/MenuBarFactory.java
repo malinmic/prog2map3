@@ -25,7 +25,7 @@ public class MenuBarFactory {
 
 
         //---------- File > Import
-        MenuItem fileImport = new MenuItem("Import file..");
+        MenuItem fileImport = new MenuItem("Import from .txt file..");
         fileImport.setOnAction(event -> {
             try {
                 mainController.importFromFile(event, postalCodeRegistry, app);

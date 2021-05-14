@@ -7,14 +7,12 @@
     <list default="true" id="85548283-8abe-4ed5-ad33-be62a1dfcba2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/PostalCodeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/MenuBarFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/controllers/factories/MenuBarFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/ntnu/idatt2001/mmedvard/models/PostalCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/PostalCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/no/ntnu/idatt2001/mmedvard/models/PostalCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/no/ntnu/idatt2001/mmedvard/models/FileManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/no/ntnu/idatt2001/mmedvard/models/PostalCodeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ImportIcon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SearchIcon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeRegistryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/ntnu/idatt2001/mmedvard/models/PostalCodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ImportIcon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SearchIcon.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -66,6 +64,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Maven.Mappe3 [clean,javafx:run]">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mappe3" />
       <extension name="coverage">
@@ -227,7 +236,7 @@
       <workItem from="1620900966921" duration="26585000" />
       <workItem from="1620974059198" duration="2332000" />
       <workItem from="1620985543619" duration="120000" />
-      <workItem from="1620985726876" duration="781000" />
+      <workItem from="1620985726876" duration="4704000" />
     </task>
     <servers />
   </component>

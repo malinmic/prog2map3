@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PostalCodeRegistryTest {
 
     @Test
-    void getPostalCodeArrayList() {
+    void getPostalCodeArrayList_gets() {
         PostalCodeRegistry postalCodeRegistry = new PostalCodeRegistry();
 
         Assertions.assertEquals(new ArrayList<PostalCode>(), postalCodeRegistry.getPostalCodeArrayList());
